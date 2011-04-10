@@ -34,12 +34,26 @@ var Set = function(input){
     return new Set(this.get().concat(iset.get()))
   }
 
-  this.intersect = function(iset){
+
+  this.intersection = function(iset){
     throw new Error('not implemented')
   }
 
   this.difference = function(iset){
-    throw new Error('not implemented')
+    var items = iset.get()
+      , i = 0
+      , l = items.length
+      , oset = this.union(iset)
+      , prop
+
+    for(; i < l; i++){
+      prop = items[i]
+      if(this.contains(prop)){
+        oset.remove(prop)
+      }
+    }
+
+    return oset
   }
 
   this.subset = function(iset){
