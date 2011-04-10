@@ -7,7 +7,7 @@ var Set = function(input){
   }
 
   this.empty = function(){
-    throw new Error('not implemented')
+    return Object.keys(set).length == 0
   }
 
   this.size = function(){
