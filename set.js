@@ -79,7 +79,23 @@ var Set = function(input){
   }
 
   this.subset = function(iset){
-    throw new Error('not implemented')
+    var items = iset.get()
+      , subset = false
+      , i = 0
+      , l = items.length
+
+    for(; i < l; i++){
+      prop = items[i]
+      if(this.contains(prop)){
+        subset = true
+      }
+      else{
+        subset = false
+        break
+      }
+    }
+
+    return subset
   }
 
   this.pop = function(){
