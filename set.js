@@ -99,7 +99,10 @@ var Set = function(input){
   }
 
   this.pop = function(){
-    throw new Error('not implemented')
+    var prop = this.get().pop
+    this.remove(prop)
+
+    return prop
   }
 
   this.find = function(pred){
