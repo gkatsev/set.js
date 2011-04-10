@@ -3,7 +3,7 @@ var Set = function(input){
     , value = null
 
   this.contains = function(prop){
-    throw new Error('not implemented')
+    return !!set[prop]
   }
 
   this.empty = function(){
