@@ -31,7 +31,7 @@ var Set = function(input){
   }
 
   this.union = function(iset){
-    throw new Error('not implemented')
+    return new Set(this.get().concat(iset.get()))
   }
 
   this.intersect = function(iset){
