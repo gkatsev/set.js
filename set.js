@@ -35,8 +35,30 @@ var Set = function(input){
   }
 
 
-  this.intersection = function(iset){
-    throw new Error('not implemented')
+  this.intersect = function(iset){
+    var items = iset.get()
+      , i = 0
+      , l = items.length
+      , oset = new Set()
+      , prop
+
+    for(; i < l; i++){
+      prop = items[i]
+      if(!this.contains(prop)){
+        oset.add(prop)
+      }
+    }
+
+    items = this.get()
+
+    for(; i < l; i++){
+      prop = items[i]
+      if(!iset.contains(prop)){
+        oset.add(prop)
+      }
+    }
+
+    return oset
   }
 
   this.difference = function(iset){
