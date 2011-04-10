@@ -27,7 +27,7 @@ var Set = function(input){
   }
 
   this.remove = function(prop){
-    throw new Error('not implemented')
+    delete set[prop]
   }
 
   this.union = function(iset){
