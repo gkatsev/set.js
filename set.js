@@ -11,7 +11,7 @@ var Set = function(input){
   }
 
   this.size = function(){
-    throw new Error('not implemented')
+    return Object.keys(set).length
   }
 
   this.get = function(){
