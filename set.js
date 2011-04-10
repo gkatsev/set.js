@@ -110,7 +110,7 @@ var Set = function(input){
   }
 
   this.clear = function(){
-    throw new Error('not implemented')
+    set = {}
   }
 
   this.unique = function(iset){
