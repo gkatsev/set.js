@@ -19,7 +19,7 @@ var Set = function(input){
   }
   
   this.create = function(){
-    throw new Error('not implemented')
+    set = this.unique(Array.prototype.toString.call(arguments))
   }
 
   this.add = function(prop){
