@@ -30,4 +30,4 @@
   A set Initialized with [0,1,2,3,4] is a superset of Set [1,5,10]
     ✓ [32mis not a subset[39m
  
-✓ [32m[1mOK[22m[39m » [1m19[22m honored[90m (0.004s)[39m
+✓ [32m[1mOK[22m[39m » [1m19[22m honored[90m (0.003s)[39m
