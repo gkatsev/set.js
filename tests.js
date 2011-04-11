@@ -1,10 +1,15 @@
 // TODO add vows.js
-var assert = require('assert')
+var vows = require('vows')
+  , assert = require('assert')
   , Set = require('./set')
-  , answer = [0, 1]
-  , test = [0, 0, 1, 1]
-  , answer2 = [0,1,2,3]
-  , test2 = [0, 0, 1, 2, 2, 3, 3, 0, 1]
+  , arr1 = [0, 1]
+  , arr2 = [0, 0, 1, 1]
+  , arr3 = [0,1,2,3]
+  , arr4 = [0, 0, 1, 2, 2, 3, 3, 0, 1]
+  , set1 = new Set(arr1)
+  , set2 = new Set(arr2)
+  , set3 = new Set(arr3)
+  , set4 = new Set(arr4)
 
 
 assert.deepEqual(new Set(answer).get(),  answer,  "test1")
