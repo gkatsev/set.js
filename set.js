@@ -17,10 +17,6 @@ var Set = function(input){
   this.get = function(){
     return Object.keys(set)
   }
-  
-  this.create = function(){
-    set = this.unique(Array.prototype.toString.call(arguments))
-  }
 
   this.add = function(prop){
     set[prop] = value
@@ -44,16 +40,16 @@ var Set = function(input){
 
     for(; i < l; i++){
       prop = items[i]
-      if(!this.contains(prop)){
+      if(this.contains(prop)){
         oset.add(prop)
       }
     }
 
     items = this.get()
 
-    for(; i < l; i++){
+    for(i = 0; i < l; i++){
       prop = items[i]
-      if(!iset.contains(prop)){
+      if(iset.contains(prop)){
         oset.add(prop)
       }
     }
@@ -116,7 +112,7 @@ var Set = function(input){
   this.unique = function(iset){
     var set = {}
       , i = 0
-      , l = input.length
+      , l = iset.length
 
     for(; i < l; i++) {
       set[iset[i]] = value
@@ -125,7 +121,7 @@ var Set = function(input){
     return set
   }
 
-  set = this.unique(input) || {}
+  set = this.unique(input || []) || {}
 }
 
 module.exports = Set;
