@@ -1,6 +1,6 @@
 var Set = function(input){
   var set
-    , value = null
+    , value = true
 
   this.contains = function(prop){
     return !!set[prop]
