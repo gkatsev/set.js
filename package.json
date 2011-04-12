@@ -1,0 +1,17 @@
+{
+  "name": "set",
+  "description": "An implementation of Sets in JavaScript",
+  "version": "1.0.0",
+  "repository": "git://github.com/gkatsev/set.js.git",
+  "author": "Gary Katsevman <me@gkatsev.com> (gkatsev.com)",
+  "main": "set",
+  "directories": {
+    "lib": "."
+  },
+  "scripts": {
+    "test": "vows tests.js"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
