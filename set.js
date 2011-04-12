@@ -94,13 +94,6 @@ var Set = function(input){
     return subset
   }
 
-  this.pop = function(){
-    var prop = this.get().pop
-    this.remove(prop)
-
-    return prop
-  }
-
   this.find = function(pred){
     throw new Error('not implemented')
   }
