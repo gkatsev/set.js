@@ -1,6 +1,18 @@
+var value = true
+  , unique = function(iset){
+      var set = {}
+        , i = 0
+        , l = iset.length
+
+      for(; i < l; i++) {
+        set[iset[i]] = value
+      }
+
+      return set
+  }
+
 var Set = function(input){
   var set
-    , value = true
 
   this.contains = function(prop){
     return !!set[prop]
@@ -102,19 +114,13 @@ var Set = function(input){
     set = {}
   }
 
-  this.unique = function(iset){
-    var set = {}
-      , i = 0
-      , l = iset.length
-
-    for(; i < l; i++) {
-      set[iset[i]] = value
-    }
-
-    return set
-  }
-
-  set = this.unique(input || []) || {}
+  set = unique(input || []) || {}
 }
+
+Set.unique = function(iset){
+  return Object.keys(unique(iset))
+}
+
+
 
 module.exports = Set;

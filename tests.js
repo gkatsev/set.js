@@ -13,7 +13,19 @@ var vows = require('vows')
 
 
 vows.describe('Set').addBatch({
-  "A set" : {
+  "An array with non unique items given to Set.unique": {
+      topic: Set.unique([0,1,2,2,3,3,1,2,0,4,5,6])
+
+    , "will return an array": function(topic){
+        assert.isArray(topic)
+    }
+
+    , "which will be of length 7": function(topic){
+        assert.equal(topic.length, 7)
+    }
+  }
+
+, "A set" : {
       "Initialized with array [0,1,1]" : {
           topic: new Set([0,1,1])
 
@@ -159,11 +171,3 @@ vows.describe('Set').addBatch({
     }
 }
 }).export(module)
-
-//assert.deepEqual(new Set(answer).get(),  answer,  "test1")
-//assert.deepEqual(new Set(test).get(),    answer,  "test2")
-//assert.deepEqual(new Set(answer2).get(), answer2, "test3")
-//assert.deepEqual(new Set(test2).get(),   answer2, "test4")
-//assert.notDeepEqual(new Set(test).get(),    answer2, "test5")
-//assert.notDeepEqual(new Set(test2).get(),   answer,  "test6")
-//assert.notDeepEqual(new Set(answer).get(),  answer2, "test6")
