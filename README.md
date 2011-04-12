@@ -1,7 +1,7 @@
 # Set.js  
   
-I created this because I could not find any actual set object implementations in JavaScript that included functions such as union and intersect. Alsom I wanted to learn a bit more about creating node modules.  
-This uses [vows](http://vowsjs.org/ "vows")  
+I created this because I could not find any actual set object implementations in JavaScript that included functions such as union and intersect. Also, I wanted to learn a bit more about creating node modules.  
+This uses [vows](http://vowsjs.org/)  
   
 ## Usage  
   
