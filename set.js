@@ -114,13 +114,11 @@ var Set = function(input){
     set = {}
   }
 
-  set = unique(input || []) || {}
+  set = unique(input || [])
 }
 
 Set.unique = function(iset){
   return Object.keys(unique(iset))
 }
-
-
 
 module.exports = Set;
