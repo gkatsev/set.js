@@ -5,7 +5,7 @@ I created this because I noticed that there were no actual set object implementa
 ## Usage  
   
 Create an array of items and then pass it to Set.  
-`var Set = require('./set')  
+`var Set = require('./set')`  
 `var set = new Set([0,1,1])`  
 And then when we get it  
 `set.get() // [0,1]`  
