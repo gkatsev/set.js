@@ -47,7 +47,7 @@ var Set = function(input){
 
     items = this.get()
 
-    for(i = 0; i < l; i++){
+    for(i = 0, l = items.length; i < l; i++){
       prop = items[i]
       if(iset.contains(prop)){
         oset.add(prop)
