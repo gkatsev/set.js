@@ -95,7 +95,7 @@ var Set = function(input){
   }
 
   this.find = function(pred){
-    throw new Error('not implemented')
+    return this.get().filter(pred)
   }
 
   this.clear = function(){
