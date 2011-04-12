@@ -104,6 +104,17 @@ vows.describe('Set').addBatch({
             }
         }
 
+        , "given a isEven function": {
+              topic: function(topic){
+                return topic
+            }
+
+            , "will return an array of all even numbers": function(topic){
+                assert.deepEqual(topic.find(function(prop){ return prop % 2 == 0 }), [0,2,4])
+            }
+
+        }
+
         , "When unioned with a Set of [5,6,7]": {
               topic: function(topic){
                 return topic.union(new Set([5,6,7]))
