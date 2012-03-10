@@ -1,3 +1,5 @@
+var Set = function () {
+  
 var value = true
   , unique = function(iset){
       var set = {}
@@ -121,4 +123,10 @@ Set.unique = function(iset){
   return Object.keys(unique(iset))
 }
 
-module.exports = Set;
+return Set
+
+}()
+
+if(typeof module === 'object' && module.hasOwnProperty('exports')){
+  module.exports = Set;
+}
