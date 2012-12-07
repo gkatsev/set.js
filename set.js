@@ -37,109 +37,107 @@ var value = true
   }
 
 var Set = function(input){
-  var set
+  this._set = unique(input || [])
+}
 
-  this.contains = function(prop){
-    return !!set[prop]
-  }
+Set.prototype.contains = function(prop){
+  return !!this._set[prop]
+}
 
-  this.empty = function(){
-    return Object.keys(set).length == 0
-  }
+Set.prototype.empty = function(){
+  return Object.keys(this._set).length == 0
+}
 
-  this.size = function(){
-    return Object.keys(set).length
-  }
+Set.prototype.size = function(){
+  return Object.keys(this._set).length
+}
 
-  this.get = function(){
-    return Object.keys(set)
-  }
+Set.prototype.get = function(){
+  return Object.keys(this._set)
+}
 
-  this.add = function(prop){
-    set[prop] = value
-  }
+Set.prototype.add = function(prop){
+  this._set[prop] = value
+}
 
-  this.remove = function(prop){
-    delete set[prop]
-  }
+Set.prototype.remove = function(prop){
+  delete this._set[prop]
+}
 
-  this.union = function(iset){
-    return new Set(this.get().concat(iset.get()))
-  }
+Set.prototype.union = function(iset){
+  return new Set(this.get().concat(iset.get()))
+}
 
 
-  this.intersect = function(iset){
-    var items = iset.get()
-      , i = 0
-      , l = items.length
-      , oset = new Set()
-      , prop
-
-    for(; i < l; i++){
-      prop = items[i]
-      if(this.contains(prop)){
-        oset.add(prop)
-      }
+Set.prototype.intersect = function(iset){
+  var items = iset.get()
+    , i = 0
+    , l = items.length
+    , oset = new Set()
+    , prop
+  
+  for(; i < l; i++){
+    prop = items[i]
+    if(this.contains(prop)){
+      oset.add(prop)
     }
-
-    items = this.get()
-
-    for(i = 0, l = items.length; i < l; i++){
-      prop = items[i]
-      if(iset.contains(prop)){
-        oset.add(prop)
-      }
+  }
+  
+  items = this.get()
+  
+  for(i = 0, l = items.length; i < l; i++){
+    prop = items[i]
+    if(iset.contains(prop)){
+      oset.add(prop)
     }
-
-    return oset
   }
+  
+  return oset
+}
 
-  this.difference = function(iset){
-    var items = iset.get()
-      , i = 0
-      , l = items.length
-      , oset = this.union(iset)
-      , prop
-
-    for(; i < l; i++){
-      prop = items[i]
-      if(this.contains(prop)){
-        oset.remove(prop)
-      }
+Set.prototype.difference = function(iset){
+  var items = iset.get()
+    , i = 0
+    , l = items.length
+    , oset = this.union(iset)
+    , prop
+  
+  for(; i < l; i++){
+    prop = items[i]
+    if(this.contains(prop)){
+      oset.remove(prop)
     }
-
-    return oset
   }
+  
+  return oset
+}
 
-  this.subset = function(iset){
-    var items = iset.get()
-      , subset = false
-      , i = 0
-      , l = items.length
-
-    for(; i < l; i++){
-      prop = items[i]
-      if(this.contains(prop)){
-        subset = true
-      }
-      else{
-        subset = false
-        break
-      }
+Set.prototype.subset = function(iset){
+  var items = iset.get()
+    , subset = false
+    , i = 0
+    , l = items.length
+  
+  for(; i < l; i++){
+    prop = items[i]
+    if(this.contains(prop)){
+      subset = true
     }
-
-    return subset
+    else{
+      subset = false
+      break
+    }
   }
+  
+  return subset
+}
 
-  this.find = function(pred){
-    return this.get().filter(pred)
-  }
+Set.prototype.find = function(pred){
+  return this.get().filter(pred)
+}
 
-  this.clear = function(){
-    set = {}
-  }
-
-  set = unique(input || [])
+Set.prototype.clear = function(){
+  this._set = {}
 }
 
 Set.unique = function(iset){
