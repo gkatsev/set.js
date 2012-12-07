@@ -25,7 +25,7 @@ var Set = function () {
   
 var value = true
   , unique = function(iset){
-      var set = {}
+      var set = Object.create(null)
         , i = 0
         , l = iset.length
 
@@ -137,7 +137,7 @@ Set.prototype.find = function(pred){
 }
 
 Set.prototype.clear = function(){
-  this._set = {}
+  this._set = Object.create(null)
 }
 
 Set.unique = function(iset){
