@@ -1,7 +1,7 @@
 // TODO add vows.js
 var vows = require('vows')
   , assert = require('assert')
-  , Set = require('./set')
+  , Set = require('../set')
   , arr1 = [0, 1]
   , arr2 = [0, 0, 1, 1]
   , arr3 = [0,1,2,3]

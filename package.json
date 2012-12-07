@@ -8,8 +8,11 @@
   "directories": {
     "lib": "."
   },
+  "devDependencies": {
+    "vows": "*"
+  },
   "scripts": {
-    "test": "vows tests.js"
+    "test": "vows"
   },
   "engines": {
     "node": "*"
