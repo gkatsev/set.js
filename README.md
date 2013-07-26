@@ -1,4 +1,7 @@
 # Set.js  
+[![Dependency Status](https://david-dm.org/brightcove/set.png)](https://david-dm.org/brightcove/set)
+[![devDependency Status](https://david-dm.org/brightcove/set/dev-status.png)](https://david-dm.org/brightcove/set#info=devDependencies)  
+[![NPM](https://nodei.co/npm/set.png)](https://nodei.co/npm/set/)
   
 I created this because I could not find any actual set object implementations in JavaScript that included functions such as union and intersect. Also, I wanted to learn a bit more about creating node modules.  
 This uses [vows](http://vowsjs.org/)  
