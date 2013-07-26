@@ -1,4 +1,5 @@
 # Set.js  
+[![Build Status](https://travis-ci.org/gkatsev/set.js.png?branch=master)](https://travis-ci.org/gkatsev/set.js)
 [![Dependency Status](https://david-dm.org/gkatsev/set.js.png)](https://david-dm.org/gkatsev/set.js)
 [![devDependency Status](https://david-dm.org/gkatsev/set.js/dev-status.png)](https://david-dm.org/gkatsev/set.js#info=devDependencies)  
 [![NPM](https://nodei.co/npm/set.png)](https://nodei.co/npm/set/)
