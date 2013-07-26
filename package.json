@@ -1,18 +1,33 @@
 {
   "name": "set",
-  "description": "An implementation of Sets in JavaScript",
   "version": "1.0.1",
-  "repository": "git://github.com/gkatsev/set.js.git",
-  "author": "Gary Katsevman <me@gkatsev.com> (gkatsev.com)",
+  "description": "An implementation of Sets in JavaScript",
   "main": "set",
+  "scripts": {
+    "test": "vows"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gkatsev/set.js"
+  },
+  "bugs": "https://github.com/gkatev/set.js/issues",
   "directories": {
     "lib": "."
   },
+  "keywords": [
+    "set",
+    "intersect",
+    "union",
+    "difference"
+  ],
+  "author": "Gary Katsevman <me@gkatsev.com> (gkatsev.com)",
+  "license": {
+    "type": "MIT",
+    "url": "http://gkatsev.mit-license.org/"
+  },
+  "readmeFilename": "README.md",
   "devDependencies": {
     "vows": "*"
-  },
-  "scripts": {
-    "test": "vows"
   },
   "engines": {
     "node": "*"
