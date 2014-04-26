@@ -24,13 +24,19 @@ OFTWARE.
 var Set = function () {
 
 var value = true
+  , jsonify = function (item) {
+     if (typeof item === "object") {
+       return item = JSON.stringify(item)
+     }
+     return item;
+  }
   , unique = function(iset){
       var set = Object.create(null)
         , i = 0
         , l = iset.length
 
       for(; i < l; i++) {
-        set[iset[i]] = value
+        set[jsonify(iset[i])] = value
       }
 
       return set
@@ -41,7 +47,7 @@ var Set = function(input){
 }
 
 Set.prototype.contains = function(prop){
-  return !!this._set[prop]
+  return !!this._set[jsonify(prop)]
 }
 
 Set.prototype.empty = function(){
@@ -57,11 +63,11 @@ Set.prototype.get = function(){
 }
 
 Set.prototype.add = function(prop){
-  this._set[prop] = value
+  this._set[jsonify(prop)] = value
 }
 
 Set.prototype.remove = function(prop){
-  delete this._set[prop]
+  delete this._set[jsonify(prop)]
 }
 
 Set.prototype.union = function(iset){
