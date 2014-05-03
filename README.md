@@ -1,41 +1,44 @@
-# Set.js  
+# Set.js
 [![Build Status](https://travis-ci.org/gkatsev/set.js.png?branch=master)](https://travis-ci.org/gkatsev/set.js)
 [![Dependency Status](https://david-dm.org/gkatsev/set.js.png)](https://david-dm.org/gkatsev/set.js)
-[![devDependency Status](https://david-dm.org/gkatsev/set.js/dev-status.png)](https://david-dm.org/gkatsev/set.js#info=devDependencies)  
+[![devDependency Status](https://david-dm.org/gkatsev/set.js/dev-status.png)](https://david-dm.org/gkatsev/set.js#info=devDependencies)
 [![NPM](https://nodei.co/npm/set.png)](https://nodei.co/npm/set/)
-  
-I created this because I could not find any actual set object implementations in JavaScript that included functions such as union and intersect. Also, I wanted to learn a bit more about creating node modules.  
-This uses [vows](http://vowsjs.org/)  
-  
-## Usage  
-  
-Create an array of items and then pass it to Set.  
-`var Set = require('./set')`  
-`var set = new Set([0,1,1])`  
-And then when we get it  
-`set.get() // [0,1]`  
-  
-## API  
-There are various Set functions available  
-  
-### Static functions  
-`Set#unique` given an array, return an array with all duplicates removed.  
-  
-### Instance functions  
-`Set#contains` return whether a given property is available.  
-`Set#empty` return whether the set in empty.  
-`Set#size` return the size of the Set.  
-`Set#get` return the set as an Array.  
-  
-`Set#add` add an item to the Set.  
-`Set#remove` remove an item from the set.  
-`Set#clear` remove all items from the set.  
-  
-`Set#union` return a new set that is the union of the set with another one.  
-`Set#intersect` return a new set that is the intersection of the set with another one.  
-`Set#difference` return a new set that is the difference of the set with another one.  
-  
-`Set#find` return an array with all items that match the predicate.  
+
+## Usage
+
+Create an array of items and then pass it to Set.
+`var Set = require('./set')`
+`var set = new Set([0,1,1])`
+And then when we get it
+`set.get() // [0,1]`
+
+### Note on input types
+This module casts inputs into strings. Objects and Arrays are turned into JSON with `JSON.stringify`.
+This makes this module fairly simple as it doesn't allow complex objects to be stored. However, given that Objects and Arrays are now JSONified, these objects can now be compared according to their JSON output. To make two objects unique, give them a different output for their `toJSON` method.
+
+In a future version, this module would use a javascript Set as the datastructure and therefore won't have this limitation, but Sets are quite ready yet.
+
+## API
+There are various Set functions available
+
+### Static functions
+`Set#unique` given an array, return an array with all duplicates removed.
+
+### Instance functions
+`Set#contains` return whether a given property is available.
+`Set#empty` return whether the set in empty.
+`Set#size` return the size of the Set.
+`Set#get` return the set as an Array.
+
+`Set#add` add an item to the Set.
+`Set#remove` remove an item from the set.
+`Set#clear` remove all items from the set.
+
+`Set#union` return a new set that is the union of the set with another one.
+`Set#intersect` return a new set that is the intersection of the set with another one.
+`Set#difference` return a new set that is the difference of the set with another one.
+
+`Set#find` return an array with all items that match the predicate.
 
 ## License
 
