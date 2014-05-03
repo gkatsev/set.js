@@ -7,10 +7,12 @@
 ## Usage
 
 Create an array of items and then pass it to Set.
-`var Set = require('./set')`
-`var set = new Set([0,1,1])`
-And then when we get it
-`set.get() // [0,1]`
+```js
+var Set = require('./set')
+var set = new Set([0,1,1])
+// And then when we get it
+set.get() // [0,1]
+```
 
 ### Note on input types
 This module casts inputs into strings. Objects and Arrays are turned into JSON with `JSON.stringify`.
