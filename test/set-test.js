@@ -6,22 +6,48 @@ var vows = require('vows')
   , arr2 = [0, 0, 1, 1]
   , arr3 = [0,1,2,3]
   , arr4 = [0, 0, 1, 2, 2, 3, 3, 0, 1]
+  , arr5 = [{x:1}, {x:1}]
+  , arr6 = [{x:1, y:1}, {x: 1}]
   , set1 = new Set(arr1)
   , set2 = new Set(arr2)
   , set3 = new Set(arr3)
   , set4 = new Set(arr4)
+  , set5 = new Set(arr5)
+  , set6 = new Set(arr6)
 
 
 vows.describe('Set').addBatch({
   "An array with non unique items given to Set.unique": {
-      topic: Set.unique([0,1,2,2,3,3,1,2,0,4,5,6])
+      "consisting of only numbers": {
+        topic: Set.unique([0,1,2,2,3,3,1,2,0,4,5,6])
 
-    , "will return an array": function(topic){
-        assert.isArray(topic)
+      , "will return an array": function(topic){
+          assert.isArray(topic)
+      }
+
+      , "which will be of length 7": function(topic){
+          assert.equal(topic.length, 7)
+      }
     }
+    , "consisting of objects": {
+        topic: Set.unique(arr5)
+      , "will return an array": function(topic) {
+          assert.isArray(topic)
+      }
+      , "which will be of length 1": function(topic) {
+          assert.equal(topic.length, 1)
+      }
+      , "whose item will be a JSON string": function(topic) {
+          assert.equal(typeof topic[0], "string")
+      }
+      , "whose item will have one key: x": function(topic) {
+          var item = JSON.parse(topic[0])
+            , keys = Object.keys(item)
 
-    , "which will be of length 7": function(topic){
-        assert.equal(topic.length, 7)
+          assert.equal(keys.length, 1)
+          assert.equal(keys[0], "x")
+          assert.equal(item[keys[0]], 1)
+      }
     }
   }
 
@@ -94,7 +120,7 @@ vows.describe('Set').addBatch({
                     assert.isTrue(topic)
                 }
             }
-            
+
             , "Set [0,2,4]":{
                   topic: function(topic){
                     return topic.subset(new Set([0,2,4]))
